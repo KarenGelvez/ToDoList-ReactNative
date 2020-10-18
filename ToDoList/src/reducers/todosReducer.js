@@ -1,9 +1,7 @@
 import {types} from '../types';
 
 const initialState = {
-  id: 1,
-  todo: 'Prueba Extitosa',
-  completed: false,
+  todos: [{}],
 };
 
 export const todosReducer = (state = initialState, action) => {
@@ -23,6 +21,12 @@ export const todosReducer = (state = initialState, action) => {
         id: action.payload.id,
         todo: action.payload.todo,
         completed: action.payload.completed,
+      };
+
+    case types.completed:
+      return {
+        id: action.payload.id,
+        completed: !action.payload.completed,
       };
     case types.delete:
       return {
