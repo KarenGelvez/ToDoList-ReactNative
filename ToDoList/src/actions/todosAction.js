@@ -40,7 +40,13 @@ export const completedTodo = (id, completed) => {
   };
 };
 
-export const updateTodo = (id, newtodo) => {};
+export const updateTodo = (id, newtodo) => {
+  return () => {
+    Firebase.database().ref(`todos/${id}`).update({
+      todo: newtodo,
+    });
+  };
+};
 
 export const deleteTodo = (id) => {
   return () => {

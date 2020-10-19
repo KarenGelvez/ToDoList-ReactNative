@@ -11,6 +11,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {addTodo, getTodos} from '../actions/todosAction';
 import {ItemTodo} from '../components/ItemTodo';
+import {Loading} from '../components/Loading';
 
 const Todos = () => {
   const {todos} = useSelector((state) => state.todos);
